@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "Bastien",
+      "email": "email@email.com",
+      "id": 1
+    },
+    {
+      "name": "Bastien",
+      "email": "bastien.daniel@rawfish.com",
+      "id": "d4d15b63-edfb-47cc-887a-0d44ed2c1260"
+    }
+  ]
+}
