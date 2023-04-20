@@ -2,13 +2,18 @@
   "users": [
     {
       "name": "Bastien",
-      "email": "email@email.com",
-      "id": 1
+      "email": "bastien.daniel@rawfish.com",
+      "id": "5d419e9f-3509-408e-9c28-f8daa2c29fca"
     },
     {
       "name": "Bastien",
       "email": "bastien.daniel@rawfish.com",
-      "id": "d4d15b63-edfb-47cc-887a-0d44ed2c1260"
+      "id": "bd8bc522-0e27-4fd0-966a-94fea578e828"
+    },
+    {
+      "name": "blabla",
+      "email": "blabla@blabla.com",
+      "id": "7631c5e2-3419-4f1c-a550-8fdd01897bf4"
     }
   ]
 }

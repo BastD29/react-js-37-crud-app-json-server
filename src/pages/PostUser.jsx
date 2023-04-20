@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function MyForm() {
+function PostUser() {
   const [formData, setFormData] = useState({});
 
   const handleSubmit = async (e) => {
@@ -17,7 +17,7 @@ function MyForm() {
         body: JSON.stringify(newData),
       });
       const data = await response.json();
-      console.log(data);
+      console.log("submitted data:", data);
     } catch (error) {
       console.error(error);
     }
@@ -45,4 +45,4 @@ function MyForm() {
   );
 }
 
-export default MyForm;
+export default PostUser;

@@ -1,10 +1,16 @@
 import React from "react";
-import MyForm from "./pages/MyForm";
+import { Route, Routes } from "react-router-dom";
+
+import PostUser from "./pages/PostUser";
+import GetUsers from "./pages/GetUsers";
+import GetUser from "./pages/GetUser";
 
 export default function App() {
   return (
-    <>
-      <MyForm />
-    </>
+    <Routes>
+      <Route path="/post" element={<PostUser />} />
+      <Route path="/users" element={<GetUsers />} />
+      <Route path="/users/:userId" element={<GetUser />} />
+    </Routes>
   );
 }
