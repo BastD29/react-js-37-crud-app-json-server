@@ -17,7 +17,8 @@ function PostUser() {
         body: JSON.stringify(newData),
       });
       const data = await response.json();
-      console.log("submitted data:", data);
+      console.log("created data:", data);
+      alert("User added with success!");
     } catch (error) {
       console.error(error);
     }
@@ -28,6 +29,7 @@ function PostUser() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // alert("User added with success!");
   };
 
   return (

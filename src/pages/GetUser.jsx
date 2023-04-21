@@ -1,25 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function User() {
-  const { id } = useParams();
+function GetUser() {
+  let params = useParams();
+
   const [user, setUser] = useState({});
 
-  console.log({ id });
+  // const fetchUser = async (id) => {
+  //   try {
+  //     const response = await fetch(`http://localhost:8000/users/${id}`);
+  //     const data = await response.json();
+  //     console.log("data:", data);
+  //     setUser(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchUser(params.userId);
+  // }, [params.userId]);
 
   useEffect(() => {
-    const getUser = async () => {
+    const fetchUser = async (id) => {
       try {
         const response = await fetch(`http://localhost:8000/users/${id}`);
         const data = await response.json();
+        console.log("data:", data);
         setUser(data);
       } catch (error) {
         console.error(error);
       }
     };
 
-    getUser();
-  }, [id]);
+    fetchUser(params.userId);
+  }, [params.userId]);
 
   return (
     <div>
@@ -29,4 +44,4 @@ function User() {
   );
 }
 
-export default User;
+export default GetUser;

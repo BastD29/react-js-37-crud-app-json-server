@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function GetUsers() {
+function DeleteUser() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -17,19 +17,23 @@ function GetUsers() {
     fetchUsers();
   }, []);
 
-  // const fetchUsers = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:8000/users");
-  //     const data = await response.json();
-  //     setUsers(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const deleteUser = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8000/users/${id}`, {
+        method: "DELETE",
+      });
 
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, []);
+      if (response.ok) {
+        const _users = users.filter((user) => user.id !== id);
+        // alert("Are you sure you want to delete this user?");
+        setUsers(_users);
+      } else {
+        console.error(error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <ul>
@@ -37,10 +41,11 @@ function GetUsers() {
         <li key={user.id}>
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
+          <button onClick={() => deleteUser(user.id)}>Delete</button>
         </li>
       ))}
     </ul>
   );
 }
 
-export default GetUsers;
+export default DeleteUser;
